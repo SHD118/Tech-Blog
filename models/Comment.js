@@ -11,7 +11,7 @@ Dish.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
+    commenter_username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
