@@ -6,8 +6,21 @@ router.get("/", (req, res) => {
 });
 
 
+// route to get all post and render to "all" view
+router.get('/', async (req, res) => {
+    // We find all posts in the db and set the data equal to postData
+    const postData = await Post.findAll().catch((err) => { 
+      res.json(err);
+    });
+    // We use map() to iterate over postData and then add .get({ plain: true }) each object to serialize it. 
+    const posts = dishData.map((post) => post.get({ plain: true }));
+    // We render the template, 'all', passing in posts, a new array of serialized objects.
+    res.render('all', { posts });
+    });
+
+
 // Posts
-// route to get all Post by username param
+// route to get all Post from a user using params
 router.get('/:user', async (req, res) => {
     try {
         // We find all post assocaited with this user from params using the param to search by username
@@ -20,6 +33,7 @@ router.get('/:user', async (req, res) => {
         // This returns a sequlize post object back and assigned it to post constant 
         const post = postData.get({ plain: true });
           // We render the template, 'post', passing in post, a new array of serialized objects.
+        // need to relook at this code (render code for sure bucko)
         res.render('post', post);
     }
     catch (err) {
@@ -27,4 +41,5 @@ router.get('/:user', async (req, res) => {
     };  
     
 });
+
     module.exports = router;
