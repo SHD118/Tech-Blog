@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model { }
 
-Dish.init(
+Post.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,8 +11,8 @@ Dish.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        creator_username: {
-            type: DataTypes.STRING,
+        creator_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         post_title: {
@@ -24,18 +24,21 @@ Dish.init(
             allowNull: true,
         },
 
-        date_created: {
-            // Fill in later
-        },
-        post_comments: {
-            // Fill in later
-        },
+        // date_created: {
+        //     // Fill in later
+        // },
+        // post_comments: {
+        //     // Fill in later
+        // },
+        
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
         modelName: 'post',
+        
+       
     }
 );
 

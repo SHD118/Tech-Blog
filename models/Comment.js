@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
-Dish.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,22 +15,26 @@ Dish.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    comment: {
+    comment_content: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
     post_id: {
-// Fill in later
+
+      type: DataTypes.INTEGER,
+      references: {
+        model: "post",
+        key: "id",
+      }
     },
-    date_created: {
-      // Fill in later
-    },
+
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
     modelName: 'comment',
+    
   }
 );
 

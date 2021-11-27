@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
       res.json(err);
     });
     // We use map() to iterate over postData and then add .get({ plain: true }) each object to serialize it. 
-    const posts = dishData.map((post) => post.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
     // We render the template, 'all', passing in posts, a new array of serialized objects.
     res.render('all', { posts });
     });

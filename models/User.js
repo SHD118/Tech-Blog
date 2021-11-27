@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class User extends Model { }
 
-Dish.init(
+User.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -27,6 +27,7 @@ Dish.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
+        timestamps: false
     }
 );
 
