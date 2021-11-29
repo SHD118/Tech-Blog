@@ -19,7 +19,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        passowrd: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             // need to figure out how to use bcrpt for hashing passwords

@@ -24,12 +24,6 @@ Post.init(
             allowNull: true,
         },
 
-        // date_created: {
-        //     // Fill in later
-        // },
-        // post_comments: {
-        //     // Fill in later
-        // },
         
     },
     {

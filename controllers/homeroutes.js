@@ -1,9 +1,14 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require('../models');
 
-router.get("/", (req, res) => {
+// router.get("/", (req, res) => {
+//     res.render("login")
+// });
+
+router.get("/login", (req, res) => {
     res.render("login")
 });
+
 
 
 // route to get all post and render to "all" view
@@ -21,10 +26,10 @@ router.get('/', async (req, res) => {
 
 // Posts
 // route to get all Post from a user using params
-router.get('/:user', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         // We find all post assocaited with this user from params using the param to search by username
-        const postData = await Post.User(req.params.user)
+        const postData = await Post.findByPk(req.params.id)
         // if this user !exist than display error and return
         if (!postData) {
             res.status(404).json({ message: 'No user with this username!' });

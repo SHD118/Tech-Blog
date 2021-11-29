@@ -1,6 +1,6 @@
 const { Post } = require('../models');
 
-const postData = [
+const postDataSeed = [
     {
         creator_id: "1",
         post_title: "linux kernel name origins",
@@ -18,6 +18,6 @@ const postData = [
 }
 ];
 
-const postData = () => Post.bulkCreate(postData);
+const postData = () => Post.bulkCreate(postDataSeed);
 
 module.exports = postData;

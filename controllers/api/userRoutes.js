@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { User } = require('../../models');
+const auth = require("../../util/auth")
 
 // login in
-
 router.post('/login', async (req, res) => {
     try {
         const userNameData = await User.findOne({
@@ -23,17 +23,23 @@ router.post('/login', async (req, res) => {
         }
 
         // need to add session code
-          res.status(200).json(userNameData);
+         req.session.save(() => {
+            req.session.userId = newUser.id;
+            req.session.userName = newUser.username;
+            req.session.loggedIn = true;
+            res.status(200).json(userNameData);
+        })
+         
     }catch (err) {
         res.status(500).json(err);
       }
 })
 
 // logout
-router.post('/logout',  (req, res) => {
+router.post('/logout', auth, (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(()  => {
-           await res.status(204).end();
+            res.status(204).end();
         });
     } else {
         res.status(404).end();
@@ -41,14 +47,23 @@ router.post('/logout',  (req, res) => {
 });
 // create user
 router.post('/', async (req, res) => {
+    console.log(req.body)
     try {
-        const newUser = await User.create({
-            username: req.body.user,
-            email: req.body.email,
-            password: req.body.password,
+        const newUser = await User.create(
+            // username: req.body.username,
+            // email: req.body.email,
+            // password: req.body.password,
+            req.body
+        )
+        req.session.save(() => {
+            req.session.userId = newUser.id;
+            req.session.userName = newUser.username;
+            req.session.loggedIn = true;
+            res.status(200).json(newUser);
         })
+
         // need to add session code
-      res.status(200).json(locationData);
+     
     } catch (err) {
       res.status(400).json(err);
     }
@@ -75,4 +90,6 @@ router.delete('/:id', async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
-  });
+});
+  
+module.exports = router;
