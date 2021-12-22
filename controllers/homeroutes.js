@@ -12,7 +12,7 @@ router.get("/login", (req, res) => {
 
 
 // route to get all post and render to "all" view
-router.get('/', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
     // We find all posts in the db and set the data equal to postData
     const postData = await Post.findAll().catch((err) => { 
       res.json(err);
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     // We use map() to iterate over postData and then add .get({ plain: true }) each object to serialize it. 
     const posts = postData.map((post) => post.get({ plain: true }));
     // We render the template, 'all', passing in posts, a new array of serialized objects.
-    res.render('all', { posts });
+    res.render('dashboard', { posts });
     });
 
 

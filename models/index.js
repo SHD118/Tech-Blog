@@ -24,8 +24,8 @@ Post.hasMany(Comment, {
 })
 
 // comment can belong to one post and one user
-Comment.belongsTo(Post, {
-    foreignKey: 'post_id',
+Comment.belongsTo(User, {
+    foreignKey: 'user_id',
     onDelete: 'CASCADE',
 })
 

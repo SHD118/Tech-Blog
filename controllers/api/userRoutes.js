@@ -4,7 +4,9 @@ const auth = require("../../util/auth")
 
 // login in
 router.post('/login', async (req, res) => {
+    console.log("happened")
     try {
+        
         const userNameData = await User.findOne({
             where: {
                 email: req.body.email,
@@ -15,21 +17,22 @@ router.post('/login', async (req, res) => {
             return;
         }
         
-        const validatePassword = await userNameData.password(req.body.password);
-
+        const validatePassword = await userNameData.checkPassword(req.body.password);
+console.log("hello", validatePassword)
         if (!validatePassword) {
             res.status(400).json({ message: 'Please enter a valid password' });
             return;
         }
-
+        console.log("hello2", validatePassword)
         // need to add session code
          req.session.save(() => {
-            req.session.userId = newUser.id;
-            req.session.userName = newUser.username;
+            req.session.userId = userNameData.id;
+            req.session.userName = userNameData.username;
             req.session.loggedIn = true;
             res.status(200).json(userNameData);
         })
-         
+        console.log("hello3", validatePassword)
+        console.log("hello3", req.body)
     }catch (err) {
         res.status(500).json(err);
       }

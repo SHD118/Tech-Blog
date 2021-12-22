@@ -5,28 +5,28 @@ class Comment extends Model {}
 
 Comment.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    commenter_username: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   primaryKey: true,
+    //   autoIncrement: true,
+    // },
+    // commenter_username: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     comment_content: {
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
     },
-    post_id: {
+    // post_id: {
 
-      type: DataTypes.INTEGER,
-      references: {
-        model: "post",
-        key: "id",
-      }
-    },
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "post",
+    //     key: "id",
+    //   }
+    // },
 
   },
   {
