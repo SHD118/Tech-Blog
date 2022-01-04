@@ -1,10 +1,8 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+Tech-blog
 
-## Your Task
+### Siddharth Desai
+## Description
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
-
-Your task this week is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. You’ll build this site completely from scratch and deploy it to Heroku. Your app will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## User Story
 
@@ -51,72 +49,90 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
+[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
-## Mock-Up
+## Table of Contents
+1. [ Description. ](#description)
+2. [ Installation. ](#installation)
+3. [ Usage. ](#usage)
+4. [ License. ](#license)
+6. [ Tests. ](#tests)
+7. [ Questions. ](#questions)
+8. [ Video. ](#video)
+9. [ Screenshots. ](#screenshots)
+10. [ Links. ](#links)
+11. [ Resources. ](#resources)
+## Installation
+* Clone the repository using:
+```
+git clone git@github.com:SHD118/Tech-Blog.git
+```
+* Ensure you are in the current working directory
+* Ensure all dependencies are installed as shown below installation instructions are below:
+```
+{
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
 
-The following animation demonstrates the application functionality:
+```
+Run the below commands to install any missing dependencies
+```
+npm install bcrypt
+````
+```
+npm install connect-session-sequelize
+```
+```
+npm install dotenv
+```
 
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
+## Usage
+* Ensure all depencies and above steps are fulfilled 
+* Navigate to the working directory and open a terminal and run the below command
+```
+mysql -u root -p
+```
+* After entering password run the below command to initiliaze the database
+```
+SOURCE schema.sql 
+```
+* In the working directory run the below to initialize data into the database tables:
+```
+npm run seed
+node index.js
+```
 
-## Getting Started
+## License
+## Tests
+N/A
+## Questions?
+Want to see more of my work? [Github Link](https://github.com/SHD118/Team-Profile)
+<br/>
+Want to learn more please contact me at shdesai118@gmail.com
 
-Your application’s folder structure must follow the Model-View-Controller paradigm. You’ll need to use the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views, use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect to a MySQL database for your Models, and create an Express.js API for your Controllers.
+## Video
+https://www.awesomescreenshot.com/video/6057594?key=0b906fd55e89fad4549f742a94d6afe6
 
-You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables, the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
+## Screenshots
+![](./Assets/role.PNG)
+![](./Assets/emp.PNG)
+![](./Assets/dep.PNG)
 
-**Note**: The [express-session](https://www.npmjs.com/package/express-session) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session. This is the default behavior and you do not have to do anything to your application other than implement the npm package.
+## Links
 
-## Grading Requirements
+* https://github.com/SHD118/Employee-Tracker
 
-This homework is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-    * Application’s folder structure follows the Model-View-Controller paradigm.
-
-    * Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
-
-    * Application must be deployed to Heroku.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* User experience is intuitive and easy to navigate.
-
-* User interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+## Resources
+* https://www.npmjs.com/package/inquirer
+* https://www.mysql.com/
+* https://www.npmjs.com/package/dotenv
+* https://www.w3schools.com/sql/
