@@ -108,17 +108,22 @@ SOURCE schema.sql
 * In the working directory run the below to initialize data into the database tables:
 ```
 npm run seed
-node index.js
+
 ```
 * Lastly, in the working directory run the below to start the application
 ```
 node index.js
 ```
 
-
-
-
 ## License
+
+Copyright <2022>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ## Tests
 N/A
 ## Questions?
@@ -139,7 +144,12 @@ https://www.awesomescreenshot.com/video/6057594?key=0b906fd55e89fad4549f742a94d6
 * https://github.com/SHD118/Employee-Tracker
 
 ## Resources
-* https://www.npmjs.com/package/inquirer
-* https://www.mysql.com/
-* https://www.npmjs.com/package/dotenv
-* https://www.w3schools.com/sql/
+https://www.npmjs.com/package/express-session
+https://www.npmjs.com/package/connect-session-sequelize
+https://www.npmjs.com/package/express-handlebars
+https://www.npmjs.com/package/bcryptjs
+https://www.npmjs.com/package/sequelize
+https://www.npmjs.com/package/mysql2
+https://www.npmjs.com/package/dotenv
+https://www.npmjs.com/package/express
+
