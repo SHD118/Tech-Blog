@@ -110,6 +110,13 @@ SOURCE schema.sql
 npm run seed
 node index.js
 ```
+* Lastly, in the working directory run the below to start the application
+```
+node index.js
+```
+
+
+
 
 ## License
 ## Tests
