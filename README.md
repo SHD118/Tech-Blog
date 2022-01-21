@@ -58,10 +58,9 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 4. [ License. ](#license)
 6. [ Tests. ](#tests)
 7. [ Questions. ](#questions)
-8. [ Video. ](#video)
-9. [ Screenshots. ](#screenshots)
-10. [ Links. ](#links)
-11. [ Resources. ](#resources)
+8. [ Screenshots. ](#screenshots)
+9 [ Links. ](#links)
+10 [ Resources. ](#resources)
 ## Installation
 * Clone the repository using:
 ```
@@ -131,8 +130,6 @@ Want to see more of my work? [Github Link](https://github.com/SHD118/Team-Profil
 <br/>
 Want to learn more please contact me at shdesai118@gmail.com
 
-## Video
-https://www.awesomescreenshot.com/video/6057594?key=0b906fd55e89fad4549f742a94d6afe6
 
 ## Screenshots
 ![](./Assets/role.PNG)
